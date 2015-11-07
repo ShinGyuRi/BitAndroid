@@ -731,7 +731,7 @@ public class Books extends Activity implements SampleApplicationControl
     private class GetBookDataTask extends AsyncTask<Void, Void, Void>
     {
         private String mBookDataJSONFullUrl;
-        private static final String CHARSET = "UTF-8";
+        private static final String CHARSET = "EUC-KR";
         
         
         protected void onPreExecute()
@@ -784,7 +784,7 @@ public class Books extends Activity implements SampleApplicationControl
                 }
                 
                 BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(connection.getInputStream()));
+                    new InputStreamReader(connection.getInputStream(), "EUC-KR"));
                 StringBuilder builder = new StringBuilder();
                 String line;
                 while ((line = reader.readLine()) != null)
@@ -803,7 +803,7 @@ public class Books extends Activity implements SampleApplicationControl
                 
                 // Generates a new Book Object with the JSON object data
                 mBookData = new Book();
-                
+
                 mBookData.setTitle(jsonObject.getString("explanation"));
 //                mBookData.setAuthor(jsonObject.getString("author"));
                 mBookData.setBookUrl(jsonObject.getString("question_file"));

@@ -319,7 +319,7 @@
     <dimen name="overlay_price_value">16sp</dimen>
     <dimen name="overlay_rating_text">12sp</dimen>
     <dimen name="overlay_status">14sp</dimen>
-    <dimen name="overlay_title">15sp</dimen>
+    <dimen name="overlay_title">13sp</dimen>
     <dimen name="overlay_touch_for_more">9sp</dimen>
     <!-- From: file:/C:/Users/618/AndroidStudioProjects/FragmentTest/Books3/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/values/values.xml -->
     <eat-comment/>

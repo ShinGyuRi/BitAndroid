@@ -43,13 +43,10 @@
 
                 <TextView
                     android:id="@+id/custom_view_title"
-                    android:layout_width="150dip"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginRight="10dp"
-                    android:maxLines="2"
+                    android:layout_width="180dip"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/overlay_title"
                     android:textStyle="bold" />
 
                 <!--<TextView-->

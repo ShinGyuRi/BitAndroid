@@ -2631,7 +2631,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0c006f;
         public static final int action_mode_bar_stub=0x7f0c006e;
         public static final int action_mode_close_button=0x7f0c0057;
-        public static final int action_settings=0x7f0c00c7;
+        public static final int action_settings=0x7f0c00cc;
         public static final int activity_chooser_view_content=0x7f0c0058;
         public static final int adjust_height=0x7f0c0032;
         public static final int adjust_width=0x7f0c0033;
@@ -2643,6 +2643,7 @@ containing a value of this type.
         public static final int beginning=0x7f0c0030;
         public static final int book_now=0x7f0c0048;
         public static final int bottom=0x7f0c001b;
+        public static final int btn_pay=0x7f0c00ca;
         public static final int buttonPanel=0x7f0c0068;
         public static final int button_start=0x7f0c0082;
         public static final int buttons=0x7f0c00b0;
@@ -2714,6 +2715,7 @@ containing a value of this type.
         public static final int image=0x7f0c005a;
         public static final int imageView1=0x7f0c00c0;
         public static final int imageview=0x7f0c00a2;
+        public static final int img_teacher=0x7f0c00c8;
         public static final int info=0x7f0c00be;
         public static final int left=0x7f0c0021;
         public static final int line1=0x7f0c00b8;
@@ -2779,6 +2781,9 @@ containing a value of this type.
         public static final int slide=0x7f0c002e;
         public static final int snackbar_action=0x7f0c00a1;
         public static final int snackbar_text=0x7f0c00a0;
+        public static final int spi_class=0x7f0c00c6;
+        public static final int spi_teacher=0x7f0c00c7;
+        public static final int spi_timeList=0x7f0c00c9;
         public static final int splash_image=0x7f0c00c1;
         public static final int split_action_bar=0x7f0c0008;
         public static final int src_atop=0x7f0c0027;
@@ -2798,7 +2803,7 @@ containing a value of this type.
         public static final int text=0x7f0c00bd;
         public static final int text2=0x7f0c00bb;
         public static final int textSpacerNoButtons=0x7f0c0065;
-        public static final int textView=0x7f0c00c6;
+        public static final int textView=0x7f0c00cb;
         public static final int text_wrapper=0x7f0c00ac;
         public static final int textview=0x7f0c00a3;
         public static final int time=0x7f0c00b9;

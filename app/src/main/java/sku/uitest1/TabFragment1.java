@@ -27,6 +27,7 @@ import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -82,7 +83,7 @@ public class TabFragment1 extends Fragment {
         return view;
     }
 
-    public class RegLectAsync extends AsyncTask<String, Void, MemberClassVO> {
+    public class RegLectAsync extends AsyncTask<String, Void, JSONArray> {
 
         String requestURL = "http://117.17.143.104:8081/BitProject/androidMemberClassList";
         String url;
@@ -91,7 +92,7 @@ public class TabFragment1 extends Fragment {
         MemberClassVO memberClass = new MemberClassVO();
 
         @Override
-        protected MemberClassVO doInBackground(String... params) {
+        protected JSONArray doInBackground(String... params) {
 
             try {
                 HttpClient client = new DefaultHttpClient();
@@ -131,7 +132,7 @@ public class TabFragment1 extends Fragment {
                 Log.d("jsonArray", jsonArray.getJSONObject(0).getString("lect_img"));
 
                 String imageUrl;
-                Bitmap classIcon = null;
+                Bitmap classIcon;
 
                 if(jsonArray != null)  {
                     for (int i=0; i<jsonArray.length(); i++) {
@@ -153,7 +154,7 @@ public class TabFragment1 extends Fragment {
                     }
                 }
 
-                return memberClass;
+                return jsonArray;
             }catch (Exception e)    {
                 e.printStackTrace();
                 return null;
@@ -161,8 +162,8 @@ public class TabFragment1 extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(final MemberClassVO memberClass) {
-            super.onPostExecute(memberClass);
+        protected void onPostExecute(final JSONArray jsonArray) {
+            super.onPostExecute(jsonArray);
 
 
             ListviewAdapter adapter=new ListviewAdapter(getActivity(), R.layout.list_item,data);
@@ -170,20 +171,24 @@ public class TabFragment1 extends Fragment {
 
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                     final Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
 
                         @Override
                         public void run() {
 
-                            Intent intent = new Intent(getActivity(),
-                                    AboutScreen.class);
-                            intent.putExtra("ACTIVITY_TO_LAUNCH",
-                                    "app.Books.Books");
-                            intent.putExtra("ABOUT_TEXT_TITLE", memberClass.getLect_name());
-                            intent.putExtra("ABOUT_TEXT", "Books/CR_about.html");
-                            startActivity(intent);
+                            try {
+                                Intent intent = new Intent(getActivity(),
+                                        AboutScreen.class);
+                                intent.putExtra("ACTIVITY_TO_LAUNCH",
+                                        "app.Books.Books");
+                                intent.putExtra("ABOUT_TEXT_TITLE", "Books");
+                                intent.putExtra("ABOUT_TEXT", "Books/CR_about.html");
+                                startActivity(intent);
+                            }catch (Exception e)    {
+                                e.printStackTrace();
+                            }
 
                         }
 
